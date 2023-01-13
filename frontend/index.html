@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="css/site.css">
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="widget-card card-1">
+                    <div>
+                        <h3>Total Limit</h3>
+                        <p>10000</p>
+                    </div>
+                    <div>
+                        <h1>₹</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="widget-card card-2">
+                    <div>
+                        <h3>Total Balance</h3>
+                        <p>3000</p>
+                    </div>
+                    <div>
+                        <h1>₹</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="widget-card card-1">
+                    <div>
+                        <h3>Total Expense</h3>
+                        <p>9000</p>
+                    </div>
+                    <div>
+                        <h1>₹</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="categories-table" class="col-md-6">
+                <table class="table table-success table-striped" id="table-Category">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Limit</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    
+                </table>
+            </div>
+            <div class="col-md-6">
+                <table class="table table-success table-striped" id="expense-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mt-5 mb-5 d-flex justify-content-center">
+                    <div class="card px-1 py-4">
+                        <div class="card-body">
+                            <h3>Category</h3>
+                            <form id="category-form" action="https://www.immortal.org.in" method="POST">
+                                <div class="row mb-3">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="Title">Title</label>
+                                            <input class="form-control" id="Title" name="Title" type="text" placeholder="Title"> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="Limit">Limit</label>
+                                            <div class="input-group"> <input class="form-control" type="number" id="Limit" name="Limit" placeholder="Limit" value="0" min="0"> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" type="submit" value="submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mt-5 mb-5 d-flex justify-content-center">
+                    <div class="card px-1 py-4">
+                        <div class="card-body">
+                            <h3>Expense</h3>
+                            <form action="" id="expense-form">
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="Name">Name</label>
+                                        <input class="form-control" id="Name" type="text" name="Title" placeholder="Name"> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="Category">Category</label>
+                                        <select class="form-select" name="CategoryId" aria-label="Default select example">
+                                            <option selected>--- Choose the category ---</option>
+                                            <option value="1">Test</option>
+                                          </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="Amount">Amount</label>
+                                        <div class="input-group"> <input class="form-control" name="Amount" type="number" id="Amount" placeholder="Amount" value="0" min="0"> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="Description">Description</label>
+                                        <input class="form-control" id="Description" name="Description" type="text" placeholder="Description"> 
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- choose one -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        feather.replace();
+        var settings = {
+                    "url": "http://localhost:5093/api/Categories",
+                    "method": "GET",
+                    "timeout": 0,
+                    };
+
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+            serverData=`<table class="table table-success table-striped" id="table-Category">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Limit</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>`;
+                response.map(function(category){
+                    serverData += `<tr><td>${category.title}</td>
+                            <td>${category.limit}</td>
+                            <td>
+                                <span><i data-feather="edit"></i></span>
+                                <span><i data-feather="trash"></i></span>
+                            </td></tr>`;
+                })
+                serverData+=`</tbody>
+                </table>`;
+                $("#categories-table").html(serverData);
+                feather.replace();
+        });
+
+        var settings2 = {
+                    "url": "http://localhost:5093/api/Expenses",
+                    "method": "GET",
+                    "timeout": 0,
+                    };
+        $.ajax(settings2).done(function (response) {
+            console.log(response);
+            serverData=`<table class="table table-success table-striped" id="table-expense">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>`;
+                response.map(function(Expense){
+                    serverData += `<tr><td>${Expense.title}</td>
+                            <td>${Expense.amount}</td>
+                            <td>${Expense.description}</td>
+                            <td>
+                                <span><i data-feather="edit"></i></span>
+                                <span><i data-feather="trash"></i></span>
+                            </td></tr>`;
+                })
+                serverData+=`</tbody>
+                </table>`;
+                $("#expense-table").html(serverData);
+                feather.replace();
+        });
+
+        $(document).ready(function () {
+            console.log($("#category-form"));
+            $("#category-form").submit(function (e) {
+                e.preventDefault();
+                console.log("here");
+                var formData = new FormData($(this)[0]);
+                var settings = {
+                "url": "http://localhost:5093/api/Categories",
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "data": JSON.stringify(Object.fromEntries(formData)),
+                };
+
+                $.ajax(settings).done(function (response) {
+                console.log(response);
+                });
+            });
+
+            $("#expense-form").submit(function (e) {
+                e.preventDefault();
+                console.log("here");
+                var formData = new FormData($(this)[0]);
+                var settings = {
+                "url": "http://localhost:5093/api/Expenses",
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "data": JSON.stringify(Object.fromEntries(formData)),
+                };
+
+                $.ajax(settings).done(function (response) {
+                console.log(response);
+                });
+            });
+        });
+        
+      </script>
+  </body>
+</html>

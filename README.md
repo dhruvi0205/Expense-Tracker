@@ -25,5 +25,5 @@ step6: let the swagger run
 step7: open the index.html from the directory
 
 ## Screenshots
-
-## 
+![Alt text](images/backend.png)
+![Alt text](images/frontend.png)
